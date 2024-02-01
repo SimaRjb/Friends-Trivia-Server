@@ -6,6 +6,7 @@ const charData = require("../data/friends-quotes.json");
 
 router.route("/")
   .get((req, res) => {
+    console.log(charData);
     res.status(200).json(charData);
   })
 router.route("/:charId")
