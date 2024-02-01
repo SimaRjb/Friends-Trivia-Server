@@ -6,15 +6,14 @@ const charData = require("../data/friends-quotes.json");
 
 router.route("/")
   .get((req, res) => {
-    res.status(200).json("good");
+    res.status(200).json(charData);
   })
 router.route("/:charId")
   .get((req, res) => {
     const { charId } = req.params;
 
     const charMatch = charData.find((character) => character.charId == charId);
-    // if(!userMatch) return res.status(404).json(`No user with id ${userId}`);
-    // res.json(userMatch);
+    if(!charMatch) return res.status(404).json(`No character with id ${charId}`);
     res.status(200).json(charMatch);
   })
 

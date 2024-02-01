@@ -1,9 +1,6 @@
 const express = require("express");
 const cors = require("cors"); 
-const friendsRoute = require("./routes/friends");
-
-
-// const friendsData = require("./data/friends-quotes.json");
+// const friendsRoute = require("./routes/friends");
 
 const app = express();
 
@@ -20,7 +17,6 @@ app.use("/", (req, res, next) => {
     next();
   })
 
-// app.use("https://api.friendshackathon.com/", friendsRoute);
 app.use("/", friendsRoute);
 
 app.listen(PORT, (req, res) =>{
